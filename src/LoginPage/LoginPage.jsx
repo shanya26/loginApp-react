@@ -41,32 +41,57 @@ class LoginPage extends React.Component {
         const { loggingIn } = this.props;
         const { username, password, submitted } = this.state;
         return (
-            <div className="col-md-6 col-md-offset-3">
-                <h2>Login</h2>
-                <form name="form" onSubmit={this.handleSubmit}>
-                    <div className={'form-group' + (submitted && !username ? ' has-error' : '')}>
-                        <label htmlFor="username">Username</label>
-                        <input type="text" className="form-control" name="username" value={username} onChange={this.handleChange} />
+            <div className="limiter">
+        <div className="container-login100">
+            <div className="wrap-login100">
+                <div className="login100-pic js-tilt" data-tilt>
+                    <img src="../src/img/img-01.png" alt="IMG"/>
+                </div>
+
+                <form className="login100-form validate-form" name="form" onSubmit={this.handleSubmit}>
+                <span className="login100-form-title">
+                        Login
+                    </span>
+                <div className="wrap-input100 validate-input" data-validate = ""> 
+                        <input className="input100" type="text" name="text" name="username" placeholder="User Name" onChange={this.handleChange} value={username} />
+                        <span className="focus-input100"></span>
+                        <span className="symbol-input100">
+                            <i className="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
                         {submitted && !username &&
                             <div className="help-block">Username is required</div>
                         }
                     </div>
-                    <div className={'form-group' + (submitted && !password ? ' has-error' : '')}>
-                        <label htmlFor="password">Password</label>
-                        <input type="password" className="form-control" name="password" value={password} onChange={this.handleChange} />
+                    <div className="wrap-input100 validate-input" data-validate = "Password is required">
+                        <input className="input100" type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange}/>
+                        <span className="focus-input100"></span>
+                        <span className="symbol-input100">
+                            <i className="fa fa-lock" aria-hidden="true"></i>
+                        </span>
                         {submitted && !password &&
                             <div className="help-block">Password is required</div>
                         }
                     </div>
-                    <div className="form-group">
-                        <button className="btn btn-primary">Login</button>
-                        {loggingIn &&
-                            <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-                        }
-                        <Link to="/register" className="btn btn-link">Register</Link>
+                    
+                    <div className="container-login100-form-btn">
+                        <button className="login100-form-btn">
+                            Login
+                        </button>
+                    </div>
+                <div className="text-center p-t-136">
+                         
+                             <Link to="/register" className="btn btn-link">Register<i className="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i></Link>
+                            
+                         
                     </div>
                 </form>
+               
             </div>
+        </div>
+    </div>
+                
+                
+          
         );
     }
 }
